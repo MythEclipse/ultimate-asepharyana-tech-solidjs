@@ -8,7 +8,7 @@ const isDev =
   typeof window !== 'undefined' && window.location.hostname === 'localhost';
 const RUST_API = isDev
   ? 'http://localhost:4091'
-  : 'https://ws.asepharyana.tech';
+  : 'https://rust.asepharyana.tech';
 const ELYSIA_API = isDev
   ? 'http://localhost:4091'
   : 'https://elysia.asepharyana.tech';

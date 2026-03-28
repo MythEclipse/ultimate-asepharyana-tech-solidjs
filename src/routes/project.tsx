@@ -26,7 +26,7 @@ const PROJECTS: Project[] = [
     description:
       'API performa tinggi menggunakan Rust dengan dokumentasi Swagger',
     images: { light: '/project-rust.png', dark: '/project-rust.png' },
-    linkUrl: 'https://ws.asepharyana.tech/docs',
+    linkUrl: 'https://rust.asepharyana.tech/docs',
   },
   {
     title: 'Anime',
