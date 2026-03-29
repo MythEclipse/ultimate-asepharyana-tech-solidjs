@@ -30,7 +30,7 @@ const PROJECTS: Project[] = [
   },
   {
     title: 'Anime',
-    description: 'Nonton dan download anime dari otakudesu.cloud',
+    description: 'Nonton dan download anime dari otakudesu.best',
     images: { light: '/project-anime.png', dark: '/project-anime.png' },
     linkUrl: '/anime',
   },
