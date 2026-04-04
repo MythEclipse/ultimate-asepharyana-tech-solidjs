@@ -1,21 +1,55 @@
-# SolidStart + AuthJS
+# SolidJS Web App
 
-## Setup a Discord app
+Frontend utama berbasis SolidStart (SSR) untuk website portfolio.
 
-In order to run this example, you need to setup i.e. a Discord app in here: https://discord.com/developers/applications/, to get a client secret and client id which should be added to the .env file. Also, in the Discord app settings under OAuth2, set the Return URL to: http://localhost:3000/api/auth/callback/discord
+## Stack
 
-## AuthJS
+- SolidStart + SolidJS
+- Tailwind CSS
+- Auth.js (Discord OAuth)
+- API client ke Rust API dan Elysia API
 
-Everything you need to build an [AuthJS](https://authjs.dev/) authenticated Solid project, powered by [`solid-start`](https://start.solidjs.com);
+## Run Locally
 
-This will start a production server on port `3000`.
+```bash
+bun install
+bun run dev
+```
 
-### Enviroment Variables
+Default local URL: `http://localhost:4090`
 
-- `DISCORD_ID`=
-- `DISCORD_SECRET`=
-- `AUTH_SECRET`=b198e07a64406260b98f06e21c457b84
-- `AUTH_TRUST_HOST`=true
-- `AUTH_URL`=http://localhost:3000/api/auth
+## Scripts
 
-## This project was created with the [Solid CLI](https://github.com/solidjs-community/solid-cli)
+```bash
+bun run dev
+bun run build
+bun run start
+bun run lint
+bun run check
+```
+
+## Environment Variables
+
+Required (server):
+
+```env
+DISCORD_ID=
+DISCORD_SECRET=
+AUTH_SECRET=
+```
+
+Optional:
+
+```env
+AUTH_TRUST_HOST=true
+AUTH_URL=http://localhost:4090/api/auth
+GOOGLE_CLIENT_ID=
+VITE_GOOGLE_CLIENT_ID=
+VITE_RUST_API=http://localhost:4091
+VITE_ELYSIA_API=http://localhost:4092
+```
+
+Jika `VITE_RUST_API` / `VITE_ELYSIA_API` tidak diisi, app memakai fallback:
+
+- localhost saat development
+- domain production saat deployment
