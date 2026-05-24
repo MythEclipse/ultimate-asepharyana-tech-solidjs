@@ -1,0 +1,42 @@
+# https://moonrepo.dev/docs/config/project
+$schema: "https://moonrepo.dev/schemas/project.json"
+
+language: "typescript"
+tags:
+  - "lang/typescript"
+  - "type/frontend"
+
+dependsOn:
+  - "elysia"
+  - "rust-auth"
+
+tasks:
+  build:
+    command: "bun run build"
+    inputs:
+      - "src/**/*"
+      - "tsconfig.json"
+      - "package.json"
+      - "app.config.ts"
+    outputs:
+      - ".output"
+    options:
+      cache: true
+  dev:
+    command: "bun run dev"
+    options:
+      cache: false
+  lint:
+    command: "bun run lint"
+    inputs:
+      - "src/**/*"
+      - "tsconfig.json"
+    options:
+      cache: false
+  typecheck:
+    command: "bun run check"
+    inputs:
+      - "src/**/*"
+      - "tsconfig.json"
+    options:
+      cache: false
